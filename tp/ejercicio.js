@@ -16,3 +16,33 @@ function hacerClick() {
         body.removeChild(div)
     }
 }
+
+let a = document.querySelector("a")
+a.addEventListener("click", clickeandoElA)
+function clickeandoElA(e) {
+    let div2 = document.createElement("div")
+    let parrafo = document.createElement("p")
+    let btnAceptar = document.createElement("button")
+    let btnCancelar = document.createElement("button")
+    parrafo.innerText = "¿Está seguro que quiere salir de esta página?"
+    btnAceptar.innerText = "Aceptar"
+    btnCancelar.innerText = "Cancelar"
+    div2.classList.add("popup")
+    btnAceptar.id = "yes"
+    btnCancelar.id = "no"
+    body.appendChild(div2)
+    div2.appendChild(parrafo)
+    div2.appendChild(btnAceptar)
+    div2.appendChild(btnCancelar)
+    btnAceptar.addEventListener("click",dijoSi)
+    btnCancelar.addEventListener("click",dijoNo)
+    function dijoSi() {
+        location.href = a       
+    }
+    function dijoNo() {
+        body.removeChild(div2)
+    }
+
+    e.preventDefault()
+    console.log("¡Click del a!")
+}
