@@ -37,7 +37,7 @@ function clickeandoElA(e) {
     btnAceptar.addEventListener("click",dijoSi)
     btnCancelar.addEventListener("click",dijoNo)
     function dijoSi() {
-        location.href = a       
+        location.href = a.href       
     }
     function dijoNo() {
         body.removeChild(div2)
